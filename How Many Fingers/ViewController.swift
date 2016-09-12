@@ -10,6 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var numField: UITextField!
+    
+    
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    
+    @IBAction func guessButton(_ sender: AnyObject) {
+        
+        
+        let guess = String(arc4random_uniform(6))
+        
+        if numField.text == guess {
+            
+            resultLabel.text = "\(guess) is right!"
+            
+        } else {
+            
+            resultLabel.text = "Wrong, it was a " + guess + "."
+            
+        }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
